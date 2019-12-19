@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="me.ibrokhim.lab3">
+
+    <application>
+        <activity android:name=".Lab3AddStudentActivity"></activity>
+        <activity
+            android:name=".Lab3Activity"
+            android:label="@string/title_activity_lab3"
+            android:theme="@style/AppTheme.NoActionBar" />
+    </application>
+
+</manifest>

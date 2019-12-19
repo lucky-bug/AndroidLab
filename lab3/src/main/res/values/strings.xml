@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Lab 3</string>
+    <string name="title_activity_lab3">Lab3Activity</string>
+    <string name="form_title">Create Student</string>
+    <string name="form_action_text">Create</string>
+    <string name="first_name">First Name</string>
+    <string name="middle_name">Middle Name</string>
+    <string name="last_name">Last Name</string>
+</resources>
