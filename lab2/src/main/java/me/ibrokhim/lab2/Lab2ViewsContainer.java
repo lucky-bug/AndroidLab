@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -38,12 +39,21 @@ public class Lab2ViewsContainer extends LinearLayout {
     }
 
     public void incrementViews() {
-        TextView textView = new TextView(getContext());
-        textView.setPadding(dpTpPx(8), dpTpPx(8), dpTpPx(8), dpTpPx(8));
-        textView.setTextSize(16);
-        textView.setText(String.valueOf(viewsCount++));
+//        TextView textView = new TextView(getContext());
+//        textView.setPadding(dpTpPx(8), dpTpPx(8), dpTpPx(8), dpTpPx(8));
+//        textView.setTextSize(16);
+//        textView.setText(String.valueOf(viewsCount++));
 
-        addView(textView);
+        MyView myView = new MyView(getContext(),null);
+        myView.setPadding(dpTpPx(8), dpTpPx(8), dpTpPx(8), dpTpPx(8));
+
+        addView(myView);
+
+        TextView titleView1 = (TextView) ((RelativeLayout) myView.getChildAt(0)).getChildAt(1);
+        titleView1.setText("BoolTitle" + viewsCount);
+
+        TextView subtitleView1 = (TextView) ((RelativeLayout) myView.getChildAt(0)).getChildAt(2);
+        subtitleView1.setText("BoolSubtitle" + viewsCount++);
     }
 
     public void setViewsCount(int count) {
