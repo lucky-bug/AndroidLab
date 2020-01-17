@@ -10,21 +10,20 @@ import java.util.Set;
 public class StudentsCache {
     private static StudentsCache instance;
 
+    private Set<Student> students = new LinkedHashSet<Student>();
+
     public static StudentsCache getInstance() {
         if (instance == null) {
             synchronized (StudentsCache.class) {
-                if (instance == null) {
-                    instance = new StudentsCache();
-                }
+                instance = new StudentsCache();
             }
         }
 
         return instance;
     }
 
-    private Set<Student> students = new LinkedHashSet<>();
-
-    private StudentsCache() {}
+    private StudentsCache() {
+    }
 
     @NonNull
     public List<Student> getStudents() {

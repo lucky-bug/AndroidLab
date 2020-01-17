@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.util.ObjectsCompat;
 
 public class Student implements Parcelable {
@@ -51,7 +52,18 @@ public class Student implements Parcelable {
     }
 
     @Override
+    public boolean equals(@Nullable Object obj) {
+        if (this == obj) return true;
+        if(!(obj instanceof Student)) return false;
+        Student other = (Student) obj;
+        return this.firstName == other.firstName
+            && this.middleName == other.middleName
+            && this.lastName == other.lastName
+        ;
+    }
+
+    @Override
     public int hashCode() {
-        return ObjectsCompat.hash(lastName, firstName, middleName);
+        return ObjectsCompat.hash(firstName, middleName, lastName);
     }
 }
