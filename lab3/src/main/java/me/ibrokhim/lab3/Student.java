@@ -66,4 +66,8 @@ public class Student implements Parcelable {
     public int hashCode() {
         return ObjectsCompat.hash(firstName, middleName, lastName);
     }
+
+    public String getFullname() {
+        return firstName + " " + middleName + " " + lastName;
+    }
 }
