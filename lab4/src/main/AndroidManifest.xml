@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="me.ibrokhim.lab4">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+    <application>
+        <activity android:name=".add.AddStudentActivity"></activity>
+        <activity
+            android:name=".Lab4Activity"
+            android:label="@string/title_activity_lab4"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="me.ibrokhim.lab4.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/lab4_photo_path"
+                />
+        </provider>
+
+    </application>
+
+</manifest>

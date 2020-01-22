@@ -17,6 +17,6 @@ public class Lab1Activity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setTitle(getString(R.string.lab1_title, getClass().getSimpleName()));
+        setTitle(getString(R.string.lab1_title, Lab1Activity.class.getSimpleName()));
     }
 }
